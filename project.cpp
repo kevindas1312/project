@@ -1,0 +1,153 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main(){
+    string user;
+    cout << "Insert name of user (not less than 5 characters):";
+    cin >> user;
+    cout << endl << "Welcome " << user << " to ...";
+    cout << endl << "\n\n\n******************************Overview************************************";
+    cout << endl << user << " is an amateur swordfighter from the land of Ravenshire.";
+    cout << endl << user << " has had the dream since young be the best swordfighter since he was young.";
+    cout << endl << "To achieve this, "<< user << " has to embark on a journey to obtain the greatest sword there ever is, (The Bloodpetal)";
+    cout << endl << "However, to obtain the sword,"<< user << " has to pass through 3 levels.";
+    
+    cout << endl <<  "\n\n\nIn Level 1, to get pass this level, you need to defeat The Keeper of Frostmere in the North of Greystone.";
+    cout << endl << "The Keeper of Frostmere will be guarding the The Crimson Blade.";
+    cout <<endl << "You need to obtain The Crimson Blade to defeat the next level.";
+
+    cout <<endl << "\n\n\nIn Level 2, to advance further, you must defeat The Warden of Blackhollow, located in the Northern reaches of Ashvale.";
+    cout <<endl << "The Warden of Blackhollow guards The Obsidian Edge, a blade of immense power.";
+    cout <<endl << "You must obtain The Obsidian Edge to conquer the next level.";
+    
+    cout << endl << "\n\n\nAnd for the final level, you must defeat The Sentinel of Ironreach, found in the Northern Highlands of Valemont.";
+    cout << endl << "The Sentinel of Ironreach guards The Bloodpetal, a legendary sword of unmatched sharpness.";
+    cout << endl << "P.S. Good luck claiming The Bloodpetal as no one has ever defeated the The Sentinel of Ironreach.";
+
+    //declare variables & constants
+    double attack, user_health, the_keeper_of_frostmere_health, the_warden_of_blackhollow_health, the_sentinel_of_ironreach, crimson_blade, obsidian_edge, the_bloodpetal, starter_sword;
+    
+    //assigning constants
+    user_health = 100;
+    the_keeper_of_frostmere_health = 50;
+    the_warden_of_blackhollow_health = 75;
+    the_sentinel_of_ironreach = 100;
+    crimson_blade = 8;
+    obsidian_edge = 12;
+    the_bloodpetal = 20;
+
+    cout << endl << "\nList of Default swords";
+    cout << endl << "Wooden Beak (1)";
+    cout << endl << "Stick of Styx (2)";
+    cout << endl << "Dawnbreaker (3)";
+    cout << "You may now choose your default sword (1/2/3):";
+    cin >> starter_sword;
+    if (starter_sword == 1){
+        cout << "You will begin your adventure with Wooden Beak!";
+        attack = 4;
+    }
+    else if (starter_sword == 2){
+        cout << "Stick of Styx, a wise choice...";
+        attack = 4.3;
+    }
+    else if (starter_sword == 3){
+        cout << "Dawnbreaker will be thy trusty companion throughout your journey...";
+        attack = 4.2;
+    }
+    else{
+        cout << "Invalid option, restart game.";
+    }
+
+    cout << endl << "\n\n\n******************************Level 1************************************";
+    cout << endl << "You have arrived at Frostmere in the North of Greystone.";
+    cout << endl << "The Keeper of Frostmere emerges from the shadows!";
+    cout << endl << "Your Health: " << user_health;
+    cout << endl << "The Keeper of Frostmere Health: " << the_keeper_of_frostmere_health;
+    
+    while(user_health > 0 && the_keeper_of_frostmere_health > 0){
+        cout << endl << "\nYou strike with your sword!";
+        the_keeper_of_frostmere_health = the_keeper_of_frostmere_health - attack;
+        cout << endl << "The Keeper of Frostmere Health: " << the_keeper_of_frostmere_health;
+        
+        if(the_keeper_of_frostmere_health <= 0){
+            cout << endl << "\nYou have defeated The Keeper of Frostmere!";
+            cout << endl << "You obtained The Crimson Blade!";
+            attack = crimson_blade;
+            break;
+        }
+        
+        cout << endl << "The Keeper of Frostmere strikes back!";
+        user_health = user_health - 3;
+        cout << endl << "Your Health: " << user_health;
+        
+        if(user_health <= 0){
+            cout << endl << "\nYou have been defeated...";
+            cout << endl << "Game Over.";
+            return 0;
+        }
+    }
+    
+    cout << endl << "\n\n\n******************************Level 2************************************";
+    cout << endl << "You have arrived at Blackhollow in the Northern reaches of Ashvale.";
+    cout << endl << "The Warden of Blackhollow stands before you!";
+    cout << endl << "Your Health: " << user_health;
+    cout << endl << "The Warden of Blackhollow Health: " << the_warden_of_blackhollow_health;
+    
+    while(user_health > 0 && the_warden_of_blackhollow_health > 0){
+        cout << endl << "\nYou strike with The Crimson Blade!";
+        the_warden_of_blackhollow_health = the_warden_of_blackhollow_health - attack;
+        cout << endl << "The Warden of Blackhollow Health: " << the_warden_of_blackhollow_health;
+        
+        if(the_warden_of_blackhollow_health <= 0){
+            cout << endl << "\nYou have defeated The Warden of Blackhollow!";
+            cout << endl << "You obtained The Obsidian Edge!";
+            attack = obsidian_edge;
+            break;
+        }
+        
+        cout << endl << "The Warden of Blackhollow strikes back with fury!";
+        user_health = user_health - 5;
+        cout << endl << "Your Health: " << user_health;
+        
+        if(user_health <= 0){
+            cout << endl << "\nYou have been defeated...";
+            cout << endl << "Game Over.";
+            return 0;
+        }
+    }
+    
+    cout << endl << "\n\n\n******************************Level 3************************************";
+    cout << endl << "You have arrived at Ironreach in the Northern Highlands of Valemont.";
+    cout << endl << "The Sentinel of Ironreach, the ultimate guardian, appears!";
+    cout << endl << "Your Health: " << user_health;
+    cout << endl << "The Sentinel of Ironreach Health: " << the_sentinel_of_ironreach;
+    
+    while(user_health > 0 && the_sentinel_of_ironreach > 0){
+        cout << endl << "\nYou strike with The Obsidian Edge!";
+        the_sentinel_of_ironreach = the_sentinel_of_ironreach - attack;
+        cout << endl << "The Sentinel of Ironreach Health: " << the_sentinel_of_ironreach;
+        
+        if(the_sentinel_of_ironreach <= 0){
+            cout << endl << "\n******************************Victory!************************************";
+            cout << endl << "You have defeated The Sentinel of Ironreach!";
+            cout << endl << "You obtained The Bloodpetal, the legendary sword!";
+            cout << endl << user << " has become the greatest swordfighter in all of Ravenshire!";
+            cout << endl << "Congratulations on completing your journey!";
+            break;
+        }
+        
+        cout << endl << "The Sentinel of Ironreach unleashes a devastating attack!";
+        user_health = user_health - 7;
+        cout << endl << "Your Health: " << user_health;
+        
+        if(user_health <= 0){
+            cout << endl << "\nYou have been defeated by The Sentinel of Ironreach...";
+            cout << endl << "Like many before you, you could not claim The Bloodpetal.";
+            cout << endl << "Game Over.";
+            return 0;
+        }
+    }
+    
+    return 0;
+}
