@@ -7,11 +7,12 @@ using namespace std;
 
 int main() {
     // starting
+    srand(time(0));
     string user;
-    cout << "Insert name of user (not more than 5 characters):";
+    cout << "Insert name of user (not more than 7 characters):";
     cin >> user;
-    while (user.size() > 5) {
-        cout << "Name too long. Please enter not more than 5 characters: ";
+    while (user.size() > 7) {
+        cout << "Name too long. Please enter not more than 7 characters: ";
         cin >> user;
     }
 
@@ -316,3 +317,4 @@ int main() {
 
     return 0;
 }
+
