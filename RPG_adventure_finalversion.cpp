@@ -129,20 +129,20 @@ int main(){
     getline(cin,user);
     while (user.size() > 10) {
         cout << "Name too long. Please enter not more than 10 characters: ";
-        cin >> user;
+        getline(cin,user);
     }
 
     introduction(user);
 
-    int user_health = 80;                 // Your HP (changes over levels)
+    int user_health = 85;                 // Your HP (changes over levels)
     int attack = 0;                        // Your attack damage (set by weapon)
     int bonusMoves = 0;                    // 2 bonus moves if you Defend & boss does Nothing
     int playerChoice = 0, bossChoice = 0;
 
-    int boss_healths[3] = {50,75,100}; //array used to store boss' health
-    int boss_damages[3] = {3,10,20}; //array used to store boss' damages
+    int boss_healths[3] = {50,75,110}; //array used to store boss' health
+    int boss_damages[3] = {8,15,20}; //array used to store boss' damages
     string names[3] = {"Keeper", "Warden", "Sentinel"}; //array used to store boss' names
-    int blade[3] = {30,40,110}; //array used to store each blade damage
+    int blade[3] = {12,18,110}; //array used to store each blade damage
 
     int* current_boss_hp;
     current_boss_hp = &boss_healths[0]; //pointer initialized with the keeper's health (ensuring a common variable for the program)
